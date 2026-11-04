@@ -1,0 +1,50 @@
+.cat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  background-color: #fcf9f5;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.cat-body-wrapper {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cat-body-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.cat-svg {
+  overflow: visible;
+}
+
+/* STATE 1: Waving the hand/paw */
+.cat-body-wrapper.wave .paw-arm {
+  animation: wavePaw 0.6s ease-in-out infinite alternate;
+  transform-origin: 135px 120px;
+}
+
+@keyframes wavePaw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-35deg) translateY(-5px); }
+}
+
+/* STATE 2: Tilting the head */
+.cat-body-wrapper.tilt {
+  animation: tiltHead 0.8s ease-in-out infinite alternate;
+  transform-origin: 100px 100px;
+}
+
+@keyframes tiltHead {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(15deg); }
+}
+
+.instruction {
+  margin-top: 20px;
+  color: #666;
+  font-size: 1.1rem;
+}
